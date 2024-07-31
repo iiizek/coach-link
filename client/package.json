@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.2",
     "@heroicons/vue": "^2.1.5",
     "@unhead/vue": "^1.9.16",
+    "@vueuse/core": "^10.11.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.418.0",

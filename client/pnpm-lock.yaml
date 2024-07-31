@@ -17,6 +17,9 @@ importers:
       '@unhead/vue':
         specifier: ^1.9.16
         version: 1.9.16(vue@3.4.35)
+      '@vueuse/core':
+        specifier: ^10.11.0
+        version: 10.11.0(vue@3.4.35)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
