@@ -1,101 +1,83 @@
-import animate from "tailwindcss-animate";
-
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: ["class"],
-	safelist: ["dark"],
-	prefix: "",
-
-	content: [
-		"./pages/**/*.{js,jsx,vue}",
-		"./components/**/*.{js,jsx,vue}",
-		"./app/**/*.{js,jsx,vue}",
-		"./src/**/*.{js,jsx,vue}",
-	],
+	darkMode: "class",
+	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
 
 	theme: {
-		container: {
-			center: true,
-			padding: "2rem",
-			screens: {
-				"2xl": "1400px",
-			},
+		fontFamily: {
+			head: ["Unbounded", "sans-serif"],
+			p: ["Montserrat", "sans-serif"],
 		},
 		extend: {
 			colors: {
-				border: "hsl(var(--border))",
-				input: "hsl(var(--input))",
-				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
-				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
-				},
-				secondary: {
-					DEFAULT: "hsl(var(--secondary))",
-					foreground: "hsl(var(--secondary-foreground))",
-				},
-				destructive: {
-					DEFAULT: "hsl(var(--destructive))",
-					foreground: "hsl(var(--destructive-foreground))",
-				},
-				muted: {
-					DEFAULT: "hsl(var(--muted))",
-					foreground: "hsl(var(--muted-foreground))",
+				shades: {
+					l: {
+						100: "#faf9f8",
+						200: "#f5f4f0",
+						300: "#efeee9",
+						400: "#eae9e1",
+						500: "#e5e3da",
+						600: "#b7b6ae",
+						700: "#898883",
+						800: "#5c5b57",
+						900: "#2e2d2c",
+						DEFAULT: "#e5e3da",
+					},
+					d: {
+						100: "#d1d1d1",
+						200: "#a3a3a3",
+						300: "#747574",
+						400: "#464746",
+						500: "#181918",
+						600: "#131413",
+						700: "#0e0f0e",
+						800: "#0a0a0a",
+						900: "#050505",
+						DEFAULT: "#181918",
+					},
 				},
 				accent: {
-					DEFAULT: "hsl(var(--accent))",
-					foreground: "hsl(var(--accent-foreground))",
+					l: {
+						100: "#cce5ff",
+						200: "#99cbff",
+						300: "#66b0ff",
+						400: "#3396ff",
+						500: "#007cff",
+						600: "#0063cc",
+						700: "#004a99",
+						800: "#003266",
+						900: "#001933",
+						DEFAULT: "#007cff",
+					},
+					m: {
+						100: "#ffe1cc",
+						200: "#ffc399",
+						300: "#ffa566",
+						400: "#ff8733",
+						500: "#ff6900",
+						600: "#cc5400",
+						700: "#993f00",
+						800: "#662a00",
+						900: "#331500",
+						DEFAULT: "#ff6900",
+					},
+					d: {
+						100: "#e5dedd",
+						200: "#cbbdba",
+						300: "#b09c98",
+						400: "#967b75",
+						500: "#7c5a53",
+						600: "#634842",
+						700: "#4a3632",
+						800: "#322421",
+						900: "#191211",
+						DEFAULT: "#7c5a53",
+					},
 				},
-				popover: {
-					DEFAULT: "hsl(var(--popover))",
-					foreground: "hsl(var(--popover-foreground))",
-				},
-				card: {
-					DEFAULT: "hsl(var(--card))",
-					foreground: "hsl(var(--card-foreground))",
-				},
-				brand: {
-					extraDark: "#070000",
-					Dark: "#15131a",
-					white: "#f4f4f6",
-					red: "#f24744",
-					aqua: "#38baa7",
-					violet: "#2f1c30",
-				},
-			},
-			borderRadius: {
-				xl: "calc(var(--radius) + 4px)",
-				lg: "var(--radius)",
-				md: "calc(var(--radius) - 2px)",
-				sm: "calc(var(--radius) - 4px)",
-			},
-			keyframes: {
-				"accordion-down": {
-					from: { height: 0 },
-					to: { height: "var(--radix-accordion-content-height)" },
-				},
-				"accordion-up": {
-					from: { height: "var(--radix-accordion-content-height)" },
-					to: { height: 0 },
-				},
-				"collapsible-down": {
-					from: { height: 0 },
-					to: { height: "var(--radix-collapsible-content-height)" },
-				},
-				"collapsible-up": {
-					from: { height: "var(--radix-collapsible-content-height)" },
-					to: { height: 0 },
-				},
-			},
-			animation: {
-				"accordion-down": "accordion-down 0.2s ease-out",
-				"accordion-up": "accordion-up 0.2s ease-out",
-				"collapsible-down": "collapsible-down 0.2s ease-in-out",
-				"collapsible-up": "collapsible-up 0.2s ease-in-out",
+				success: "#7f9b3f",
+				warning: "#fc8b07",
+				danger: "#f44336",
 			},
 		},
 	},
-	plugins: [animate],
 };
