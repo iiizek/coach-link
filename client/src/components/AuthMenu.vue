@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col justify-start items-end">
+	<div class="flex flex-col justify-start items-end" ref="targetMenu">
 		<div
 			@click="handleIsOpen"
 			:class="`flex justify-center items-center gap-3 px-4 transition-all cursor-pointer ${
@@ -90,11 +90,15 @@ import {
 	ClipboardDocumentCheckIcon as ClipboardDocumentCheckIconSolid,
 	ClockIcon as ClockIconSolid,
 } from "@heroicons/vue/24/solid";
+import { onClickOutside } from "@vueuse/core";
 import { ref } from "vue";
 
 const isOpen = ref(false);
+const targetMenu = ref(null);
 
 const handleIsOpen = () => {
 	isOpen.value = !isOpen.value;
 };
+
+onClickOutside(targetMenu, () => (isOpen.value = false));
 </script>

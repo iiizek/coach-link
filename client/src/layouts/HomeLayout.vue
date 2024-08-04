@@ -1,11 +1,15 @@
 <template>
 	<div class="overflow-hidden">
-		<section class="relative w-full h-screen">
-			<img
-				class="bottom-0 absolute w-full h-screen dark:filter-main-pic-dark"
-				:src="HomePageMainPic"
-				alt="Home image"
-			/>
+		<img
+			class="top-32 left-1/2 -z-10 absolute h-[100vh] -translate-x-1/2 dark:filter-main-pic-dark"
+			:src="HomePageMainPic"
+			alt="Home image"
+		/>
+		<section
+			:class="`relative mt-6 w-full ${
+				$route.name === 'landing' ? 'h-screen' : 'h-[60vh]'
+			}  `"
+		>
 			<div
 				class="top-0 left-1/2 absolute bg-white-opacity dark:bg-black-opacity px-4 py-10 rounded-3xl w-full text-center -translate-x-1/2"
 			>
@@ -18,9 +22,9 @@
 						и профессионального роста
 					</p>
 				</div>
-				<div class="flex justify-center items-stretch mt-4 w-full">
+				<div class="z-100 flex justify-center items-stretch mt-4 w-full">
 					<HomeNav v-if="$route.name === 'landing'" />
-					<SearchBar v-else-if="$route.name === 'search'" />
+					<SearchForm v-if="$route.name === 'search'" />
 				</div>
 			</div>
 		</section>
@@ -32,5 +36,5 @@
 <script setup>
 import HomePageMainPic from "@/assets/home-page-main-pic.svg";
 import HomeNav from "@/components/HomeNav.vue";
-import SearchBar from "@/components/SearchBar.vue";
+import SearchForm from "@/components/SearchForm.vue";
 </script>

@@ -17,6 +17,4 @@ const route = useRoute();
 const isRootPage = computed(
 	() => route.name === "landing" || route.name === "search"
 );
-
-console.log(isRootPage.value, route.name);
 </script>
