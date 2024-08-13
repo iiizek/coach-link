@@ -3,6 +3,7 @@
 		<HomeLayout v-if="isRootPage">
 			<router-view />
 		</HomeLayout>
+		<router-view v-else />
 	</RootLayout>
 </template>
 

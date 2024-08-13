@@ -24,17 +24,38 @@
 				</div>
 				<div class="z-100 flex justify-center items-stretch mt-4 w-full">
 					<HomeNav v-if="$route.name === 'landing'" />
-					<SearchForm v-if="$route.name === 'search'" />
+					<SearchForm
+						@openFilterDrawer="handleFilterDrawer"
+						v-if="$route.name === 'search'"
+					/>
 				</div>
 			</div>
 		</section>
 
 		<slot></slot>
 	</div>
+
+	<DrawerMenu
+		title="Фильтры"
+		:is-visible="filterDrawerIsVisible"
+		@close-drawer="handleFilterDrawer"
+	>
+		<FiltersForm />
+	</DrawerMenu>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 import HomePageMainPic from "@/assets/home-page-main-pic.svg";
 import HomeNav from "@/components/HomeNav.vue";
 import SearchForm from "@/components/SearchForm.vue";
+import DrawerMenu from "@/components/DrawerMenu.vue";
+import FiltersForm from "@/components/FiltersForm.vue";
+
+const filterDrawerIsVisible = ref(false);
+
+const handleFilterDrawer = () => {
+	filterDrawerIsVisible.value = !filterDrawerIsVisible.value;
+};
 </script>

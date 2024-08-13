@@ -17,7 +17,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 const visible = ref(false);
 
 const toggleVisibility = () => {
-	if (window.scrollY > 100) {
+	if (window.scrollY > 250) {
 		visible.value = true;
 	} else {
 		visible.value = false;

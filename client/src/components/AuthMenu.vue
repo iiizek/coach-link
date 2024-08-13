@@ -6,7 +6,7 @@
 				isOpen && 'dark:bg-shades-d bg-shades-l-400'
 			} hover:bg-shades-l hover:dark:bg-shades-d-400 py-2 rounded-xl`"
 		>
-			<div class="border-2 border-accent-d border rounded-full w-12 h-12">
+			<div class="border-2 border-accent-d rounded-full w-12 h-12">
 				<img src="https://avatar.iran.liara.run/public/12" alt="" />
 			</div>
 			<div class="flex flex-col">
